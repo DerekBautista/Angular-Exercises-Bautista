@@ -5,7 +5,7 @@
     {{blog?.description}} <br/>
     {{blog?.author}} <br/>
     {{blog?.comments}} <br/>
-    <button (click)="edit(blog?.id ?? 0)">Edit</button>
+    <button (click)="edit(blog?.id ?? 0)" [routerLink]="['form']" routerLinkActive="router-link-active" >Edit</button>
     <button (click)="delete(blog?.id ?? 0)">DELETE</button>
     <br/><br/>
 </div>

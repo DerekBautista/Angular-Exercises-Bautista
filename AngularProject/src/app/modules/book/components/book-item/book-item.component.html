@@ -3,7 +3,7 @@
     {{book?.name}} <br/>
     {{book?.authors}} <br/>
     {{book?.isbn}} <br/>
-    <button (click)="edit(book?.id ?? 0)">Edit</button>
+    <button (click)="edit(book?.id ?? 0)" [routerLink]="['form']" routerLinkActive="router-link-active" >Edit</button>
     <button (click)="delete(book?.id ?? 0)">DELETE</button>
     <br/><br/>
 </div>

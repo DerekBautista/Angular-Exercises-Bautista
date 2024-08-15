@@ -1,1 +1,20 @@
-<p>command-bar works!</p>
+<!-- <p>command-bar works!</p> -->
+ <button class="btn btn-info" (click)="addOnClick()" routerLink="form">Add</button>
+ <button class="btn btn-danger" (click)="deleteAllOnClick()">Delete All</button>
+
+
+ <!-- <div *ngFor="let blog of blogs; let i = index">
+    <app-blog-item [blogInput]="blog"  (actionEmitter)="executeAction($event, i)"></app-blog-item>
+</div> -->
+
+
+ <!-- <ng-container formArrayName="powers">
+    <label for="powers">Powers</label>
+    <div class="input-group mb-3" *ngFor="let power of powerFormArray.controls; index as i">
+        <input [formControlName]="i" class="form-control">
+        <button class="btn btn-danger" (click)="deletePower(i)">Delete</button>
+    </div>
+    <button)="addPower()" class="btn btn-i type="button" (clicknfo">
+        Add Power
+    </button>
+</ng-container> -->

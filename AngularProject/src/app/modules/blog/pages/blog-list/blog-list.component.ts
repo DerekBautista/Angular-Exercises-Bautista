@@ -11,4 +11,8 @@ export class BlogListComponent {
   
   constructor(private blogService:BlogService){}
   blogs:Blog[] = this.blogService.getBlogs()
+  
+  handleEvent($event:any){
+    console.log($event)
+  }
 }

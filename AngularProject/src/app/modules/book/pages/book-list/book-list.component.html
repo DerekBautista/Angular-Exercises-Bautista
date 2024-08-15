@@ -1,5 +1,6 @@
 <!-- <p>book-list works!</p> -->
 <h1>Book Page</h1>
+<app-command-bar (actionEmitter)="handleEvent($event)"></app-command-bar>
 <div *ngFor="let book of books">
     <app-book-item [bookInput] = "book"></app-book-item>
 </div>

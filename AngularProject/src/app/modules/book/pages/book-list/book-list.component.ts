@@ -16,4 +16,8 @@ export class BookListComponent {
   */
   constructor(private bookService:BookService){}
   books:Book[] = this.bookService.getBooks()
+
+  handleEvent($event:any){
+    console.log($event)
+  }
 }
