@@ -18,6 +18,16 @@ export class BookListComponent {
   books:Book[] = this.bookService.getBooks()
 
   handleEvent($event:any){
-    console.log($event)
+    console.log("Event emmited:" + $event)
   }
+  
+  edit = (bookId:number) =>{
+    console.log(`$Book ${bookId} gets edited!`)
+    this.bookService.storeCalledBook(bookId)
+  }
+
+  delete = (bookId:number) =>{
+    console.log(`$Book ${bookId} gets deleted!`)
+  }
+
 }

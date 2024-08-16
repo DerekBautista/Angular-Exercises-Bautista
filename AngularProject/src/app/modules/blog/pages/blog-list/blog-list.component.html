@@ -1,6 +1,9 @@
 <!-- <p>blog-list works!</p> -->
  <h1>Blog Page</h1>
  <app-command-bar (actionEmitter)="handleEvent($event)"></app-command-bar>
-<div *ngFor="let blog of blogs">
+<div *ngFor="let blog of blogs; let i = index">
     <app-blog-item [blogInput] = "blog"></app-blog-item>
+    <button (click)="edit(i)" [routerLink]="['form']" routerLinkActive="router-link-active" >Edit</button>
+    <button (click)="delete(i)">DELETE</button>
+    <br/><br/>
 </div>

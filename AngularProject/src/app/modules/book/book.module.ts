@@ -5,6 +5,7 @@ import { BookListComponent } from './pages/book-list/book-list.component';
 import { BookRoutingModule } from './book-routing.module';
 import { BookFormComponent } from './pages/book-form/book-form.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +17,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     
   ],
   imports: [
-    CommonModule, BookRoutingModule, SharedModule,
+    CommonModule, BookRoutingModule, SharedModule, ReactiveFormsModule
   ]
 })
 export class BookModule { }

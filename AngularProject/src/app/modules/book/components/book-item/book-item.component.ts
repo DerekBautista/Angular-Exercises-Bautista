@@ -7,13 +7,4 @@ import { Book } from 'src/app/modules/models/book';
 })
 export class BookItemComponent {
   @Input('bookInput') book:Book|undefined
-
-  edit = (bookId:number) =>{
-    console.log(`$Book ${bookId} gets edited!`)
-  }
-
-  
-  delete = (bookId:number) =>{
-    console.log(`$Book ${bookId} gets deleted!`)
-  }
 }

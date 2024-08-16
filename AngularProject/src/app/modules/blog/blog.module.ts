@@ -5,6 +5,7 @@ import { BlogItemComponent } from './components/blog-item/blog-item.component';
 import { BlogRoutingModule } from './blog-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BlogFormComponent } from './pages/blog-form/blog-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,7 @@ import { BlogFormComponent } from './pages/blog-form/blog-form.component';
     BlogFormComponent,
   ],
   imports: [
-    CommonModule, BlogRoutingModule, SharedModule
+    CommonModule, BlogRoutingModule, SharedModule, ReactiveFormsModule
   ]
 })
 export class BlogModule { }

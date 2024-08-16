@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { BookService } from '../../services/book.service';
+import { Book } from 'src/app/modules/models/book';
 
 @Component({
   selector: 'app-book-form',
@@ -9,7 +11,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 export class BookFormComponent implements OnInit{
 
   bookForm: FormGroup;
-  //authorArray: FormArray;
+  authorFormArray: FormArray;
 
   /**
    * Book Class
@@ -20,18 +22,31 @@ export class BookFormComponent implements OnInit{
         isbn:string
         
    */
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder, private bookService:BookService){
+    let storedBook:Book = bookService.getCalledBook()
     this.bookForm = this.fb.group({
-      name: new FormControl(''),
-      authors: this.fb.array([]), // Initialize FormArray
-      isbn: new FormControl('')
-    })
+      name: new FormControl(storedBook?.name??''),
+      authors: this.fb.array(storedBook?.authors??[]), // Initialize FormArray
+      isbn: new FormControl(storedBook?.isbn??''),      
+    });
+    this.authorFormArray = this.bookForm.controls['authors'] as FormArray;
   }
 
   ngOnInit(): void {}
 
-  name:FormControl = new FormControl()
-  authors:FormArray = new FormArray([this.name])
-  isbn:FormControl = new FormControl()
+
+  addAuthor = () => {
+    this.authorFormArray.controls.push(new FormControl(''));
+  };
+
+  deleteAuthor = (index: number) => {
+    this.authorFormArray.removeAt(index);
+  };
+
+
+  //when you put a get, angular knows it needs to return
+  get firstName(){
+    return this.bookForm.get('name') as FormControl
+  }
 
 }

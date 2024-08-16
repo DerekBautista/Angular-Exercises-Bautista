@@ -5,7 +5,7 @@ import { Book } from '../../models/book';
   providedIn: 'root'
 })
 export class BookService {
-
+  index:number = -1
   books:Book[] =[
     {
       id:11111,
@@ -32,5 +32,15 @@ export class BookService {
   getBooks = () =>{
     console.log(`$Book service is returning books: ${this.books}`)
     return this.books
+  }
+
+  storeCalledBook(index:number){
+    this.index = index;
+  }
+
+  getCalledBook(){
+    let book:Book = this.books[this.index]
+    this.index = -1;
+    return book
   }
 }
