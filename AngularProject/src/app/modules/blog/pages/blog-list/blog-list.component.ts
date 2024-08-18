@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BlogService } from '../../services/blog.service';
 import { Blog } from 'src/app/modules/models/blog';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blog-list',
@@ -8,9 +9,10 @@ import { Blog } from 'src/app/modules/models/blog';
   styleUrls: ['./blog-list.component.css']
 })
 export class BlogListComponent {
-  
-  constructor(private blogService:BlogService){}
-  blogs:Blog[] = this.blogService.getBlogs()
+  blogs:Blog[] | undefined
+  constructor(private blogService:BlogService, private route:ActivatedRoute){
+    this.blogs = this.route.snapshot.data['blogs']
+  }
   
   handleEvent($event:any){
     console.log("Event emmited:" + $event)

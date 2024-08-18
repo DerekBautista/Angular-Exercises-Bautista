@@ -20,7 +20,6 @@ export class BookListComponent {
   constructor(private bookService:BookService, private route:ActivatedRoute){
     this.books = this.route.snapshot.data['books']
   }
-  
 
   handleEvent($event:any){
     console.log("Event emmited:" + $event)

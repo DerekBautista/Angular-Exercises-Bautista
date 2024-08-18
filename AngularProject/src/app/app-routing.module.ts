@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookResolver } from './resolvers/book.resolver';
+import { BlogResolver } from './resolvers/blog.resolver';
 
 const routes: Routes = [{
   path: '',
@@ -17,6 +18,9 @@ const routes: Routes = [{
 },
 {
   path:'blog',
+  resolve:{
+    blogs:BlogResolver
+  },
   loadChildren: () =>
     import('./modules/blog/blog.module').then((m) => m.BlogModule),
 },
