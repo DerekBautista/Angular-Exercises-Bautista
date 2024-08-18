@@ -1,0 +1,26 @@
+<h1>PROFILE FORM</h1><br>
+<form [formGroup]="profileForm" class="container">
+    <div>
+      <label for="email">Email:</label>
+      <input class="form-control" formControlName="email" type="email" id="email" name="email" required>
+    </div>
+
+    <div>
+      <label for="name">Name:</label>
+      <input class="form-control" formControlName="name" type="text" id="name" name="name" required>
+    </div>
+
+    <div>
+      <label for="bio">Bio:</label>
+      <textarea class="form-control" formControlName="bio" id="bio" name="bio" rows="4" cols="50"></textarea>
+    </div>
+  
+    <div>
+      <label for="active">Active:</label>
+      <input class="checkbox" type="checkbox" id="active" name="active">
+    </div>
+  
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>

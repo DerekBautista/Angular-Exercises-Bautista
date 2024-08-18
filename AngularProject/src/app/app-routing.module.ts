@@ -2,11 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookResolver } from './resolvers/book.resolver';
 import { BlogResolver } from './resolvers/blog.resolver';
+import { ProfilerComponent } from './modules/user/components/profiler.component';
+import { RegisterComponent } from './modules/user/components/register/register.component';
 
 const routes: Routes = [{
   path: '',
-  redirectTo: 'blog',
+  redirectTo: 'register',
   pathMatch: 'full',
+},
+{
+  path:'register',
+  component:RegisterComponent
 },
 {
   path:'book',
