@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Book } from 'src/app/modules/models/book';
 import { BookService } from '../../services/book.service';
 
@@ -14,8 +15,12 @@ export class BookListComponent {
     authors:string[],
     isbn:string
   */
-  constructor(private bookService:BookService){}
-  books:Book[] = this.bookService.getBooks()
+  books:Book[] | undefined
+
+  constructor(private bookService:BookService, private route:ActivatedRoute){
+    this.books = this.route.snapshot.data['books']
+  }
+  
 
   handleEvent($event:any){
     console.log("Event emmited:" + $event)

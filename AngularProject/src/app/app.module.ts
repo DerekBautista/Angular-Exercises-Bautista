@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 //import { CommandBarComponent } from './shared/components/command-bar/command-bar.component';
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BookResolver } from './resolvers/book.resolver';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,8 +22,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     SharedModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BookResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

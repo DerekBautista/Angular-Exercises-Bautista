@@ -1,0 +1,38 @@
+{
+    "books": [
+        {
+            "id": 11111,
+            "name": "Harry Potter",
+            "authors": ["J.K. Rowling"],
+            "isbn":"111111111X"
+        },
+        {
+            "id":22222,
+            "name":"Percy Jackson",
+            "authors":["Rick Riordan"],
+            "isbn":"222222222X"
+        },
+        {
+            "id":33333,
+            "name": "Sleep Walker",
+            "authors": ["Stephen King"],
+            "isbn":"333333333X"
+        },
+        {
+            "id":44444,
+            "name":"Derek's Web",
+            "authors":["Derek Roi T. Bautista", "Alice Guo", "Carlos Yulo"],
+            "isbn":"444444444X"
+        }
+    ],
+    "blogs": [
+        {
+            "title": "Blog 1",
+            "description": "My Blog 1"
+        },
+        {
+            "title": "Blog 2",
+            "description": "My Blog 2"
+        }
+    ]
+}

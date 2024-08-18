@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookResolver } from './resolvers/book.resolver';
 
 const routes: Routes = [{
   path: '',
@@ -8,6 +9,9 @@ const routes: Routes = [{
 },
 {
   path:'book',
+  resolve:{
+    books:BookResolver
+  },
   loadChildren: () =>
     import('./modules/book/book.module').then((m) => m.BookModule),
 },
