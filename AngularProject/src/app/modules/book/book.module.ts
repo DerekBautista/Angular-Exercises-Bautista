@@ -14,7 +14,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     BookItemComponent,
     BookListComponent,
     BookFormComponent,
-    
   ],
   imports: [
     CommonModule, BookRoutingModule, SharedModule, ReactiveFormsModule

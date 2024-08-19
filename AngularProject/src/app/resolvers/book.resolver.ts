@@ -10,14 +10,17 @@ import { Book } from '../modules/models/book';
 @Injectable({
   providedIn: 'root',
 })
-export class BookResolver implements Resolve<Object> {
+//THE IMPLEMENT <DataType> SHOULD BE THE SAME AS Observable<DataType>
+//some reason its better I just put "any"
+export class BookResolver implements Resolve<Book[]> {
   constructor(private bookService: BookService) {}
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<Object> {
+  ): Observable<Book[]> {
     // return of(['Jose', 'Mike']);
     // debugger
+    //the method in bookService should specify its return type
     return this.bookService.getBooks();
   }
 }

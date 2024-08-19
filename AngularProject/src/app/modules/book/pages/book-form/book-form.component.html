@@ -24,5 +24,10 @@
     </ng-container>
     <br/>
     <br/>
-    <button type="submit" class="btn btn-info">Submit</button>
+    <ng-container *ngIf="!isEditing">
+        <button type="button" (click)="createBook()" class="btn btn-info">Create</button>
+    </ng-container>
+    <ng-container *ngIf="isEditing">
+        <button type="button" (click)="editBook()" class="btn btn-info">Submit</button>
+    </ng-container>
 </form>

@@ -1,66 +1,99 @@
 {
-    "users":[],
-    "books": [
-        {
-            "id": 11111,
-            "name": "Harry Potter (FROM database.json)",
-            "authors": ["J.K. Rowling"],
-            "isbn":"111111111X"
-        },
-        {
-            "id":22222,
-            "name":"Percy Jackson",
-            "authors":["Rick Riordan"],
-            "isbn":"222222222X"
-        },
-        {
-            "id":33333,
-            "name": "Sleep Walker",
-            "authors": ["Stephen King"],
-            "isbn":"333333333X"
-        },
-        {
-            "id":44444,
-            "name":"Derek's Web",
-            "authors":["Derek Roi T. Bautista", "Alice Guo", "Carlos Yulo"],
-            "isbn":"444444444X"
-        }
-    ],
-    "blogs": [
-        {
-            "id":0,
-            "title":"Can someone be absolutely 'built different'? (FROM database.json)",
-            "description":"This blog talks about if a person A will always be better than person B no matter how much person B tries?",
-            "author":"Morgan Freeman",
-            "comments":["What a wonderful blog", "Very informative, but I disagree on some points"]
-        },
-        {
-            "id":1,
-            "title":"Advanced Angular Techniques",
-            "description":"Exploring advanced concepts and techniques in Angular.",
-            "author":"Bob Smith",
-            "comments":["This is exactly what I was looking for.", "Could you add more examples?"]
-        },
-        {
-            "id": 2,
-            "title": "The Marvel Cinematic Universe: Phase 5",
-            "description": "A deep dive into the upcoming movies and shows in the MCU's Phase 5.",
-            "author": "Stan Lee Jr.",
-            "comments": ["Can't wait for the new Spider-Man movie!", "Phase 5 is going to be epic!"]
-        },
-        {
-            "id":3,
-            "title": "The Evolution of Video Games",
-            "description": "From Pong to VR: How video games have evolved over the decades.",
-            "author": "GamerX",
-            "comments": ["This brings back so many memories.", "The VR section is fascinating!"]
-        },
-        {
-            "id":4,
-            "title": "The Rise of K-Pop",
-            "description": "An exploration of how K-Pop took the world by storm.",
-            "author": "HallyuFan",
-            "comments": ["BTS and BLACKPINK are unstoppable!", "The global influence of K-Pop is incredible."]
-        }
-    ]
+  "users": [],
+  "books": [
+    {
+      "id": "0",
+      "name": "Harry Potter",
+      "authors": [
+        "J.K. Rowling"
+      ],
+      "isbn": "111111111X"
+    },
+    {
+      "id": "1",
+      "name": "Percy Jackson (JSON EDITED)",
+      "authors": [
+        "Rick Riordan"
+      ],
+      "isbn": "222222222X"
+    },
+    {
+      "id": "2",
+      "name": "Sleep Walker",
+      "authors": [
+        "Stephen King"
+      ],
+      "isbn": "333333333X"
+    },
+    {
+      "id": "3",
+      "name": "Derek's Web",
+      "authors": [
+        "Derek Roi T. Bautista",
+        "Alice Guo",
+        "Carlos Yulo"
+      ],
+      "isbn": "444444444X"
+    },
+    {
+      "id": "-1",
+      "name": "A guide to Valorant",
+      "authors": [
+        "Derek Bautista"
+      ],
+      "isbn": "121212121X"
+    }
+  ],
+  "blogs": [
+    {
+      "id": "0",
+      "title": "Can someone be absolutely 'built different'? (FROM database.json)",
+      "description": "This blog talks about if a person A will always be better than person B no matter how much person B tries?",
+      "author": "Morgan Freeman",
+      "comments": [
+        "What a wonderful blog",
+        "Very informative, but I disagree on some points"
+      ]
+    },
+    {
+      "id": "1",
+      "title": "Advanced Angular Techniques",
+      "description": "Exploring advanced concepts and techniques in Angular.",
+      "author": "Bob Smith",
+      "comments": [
+        "This is exactly what I was looking for.",
+        "Could you add more examples?"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "The Marvel Cinematic Universe: Phase 5",
+      "description": "A deep dive into the upcoming movies and shows in the MCU's Phase 5.",
+      "author": "Stan Lee Jr.",
+      "comments": [
+        "Can't wait for the new Spider-Man movie!",
+        "Phase 5 is going to be epic!"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "The Evolution of Video Games",
+      "description": "From Pong to VR: How video games have evolved over the decades.",
+      "author": "GamerX",
+      "comments": [
+        "This brings back so many memories.",
+        "The VR section is fascinating!"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "The Rise of K-Pop",
+      "description": "An exploration of how K-Pop took the world by storm.",
+      "author": "HallyuFan",
+      "comments": [
+        "BTS and BLACKPINK are unstoppable!",
+        "The global influence of K-Pop is incredible."
+      ]
+    }
+  ]
 }

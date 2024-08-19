@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Blog } from '../../models/blog';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -69,10 +69,10 @@ export class BlogService {
     return blog
   }
 
-  getBlogs = () => {
+  getBlogs = ():Observable<Blog[]> => {
     return this.http
       .get<Blog[]>(`${this.serverUrl}/blogs`)
-      .pipe(tap((data) => {
+      .pipe(tap((data:Blog[]) => {
         console.log('Books retrieved from server:', data);
         this.blogs = data;  // Update the books array with the retrieved data
       }));

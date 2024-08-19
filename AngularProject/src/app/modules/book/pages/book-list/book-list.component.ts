@@ -15,23 +15,48 @@ export class BookListComponent {
     authors:string[],
     isbn:string
   */
-  books:Book[] | undefined
+  books:Book[] = []
 
   constructor(private bookService:BookService, private route:ActivatedRoute){
-    this.books = this.route.snapshot.data['books']
+    this.getBookList()
   }
 
   handleEvent($event:any){
     console.log("Event emmited:" + $event)
-  }
-  
-  edit = (bookId:number) =>{
-    console.log(`$Book ${bookId} gets edited!`)
-    this.bookService.storeCalledBook(bookId)
+    if($event == 'DELETE ALL'){
+      this.deleteAll()
+    }
   }
 
-  delete = (bookId:number) =>{
-    console.log(`$Book ${bookId} gets deleted!`)
+  editBook = (i:number) =>{
+    let book = this.books[i]
+    this.bookService.setStoredBook(book)
+  }
+
+  deleteAll = () => {
+    console.log('Deleting all books')
+    if(this.books){
+      for(let book of this.books){
+        this.deleteBook(book.id)
+      }
+    }
+    else{
+      console.log('No data in books')
+    }
+  }
+
+  getBookList(){
+    this.bookService.getBooks().subscribe((data: Book[]) =>
+    this.books = data)
+  }
+
+  deleteBook = (bookId:number) =>{
+    this.bookService
+    .deleteBook(bookId)
+    .subscribe((data: { id: any; }) => {
+      console.log(`Book ${data.id} gets deleted!`)
+      this.getBookList()
+    })
   }
 
 }

@@ -10,12 +10,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class BlogResolver implements Resolve<Object> {
+//any could also work
+export class BlogResolver implements Resolve<any> {
   constructor(private blogService: BlogService) {}
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<Object> {
+  ): Observable<any> {
     // return of(['Jose', 'Mike']);
     // debugger
     return this.blogService.getBlogs();
