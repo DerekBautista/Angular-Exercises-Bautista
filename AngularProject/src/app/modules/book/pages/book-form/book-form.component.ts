@@ -15,20 +15,12 @@ export class BookFormComponent implements OnInit{
   bookForm: FormGroup;
   authorFormArray: FormArray;
   isEditing = true;
-  /**
-   * Book Class
-   * 
-   *     id:number,
-        name:string,
-        authors:string[],
-        isbn:string
-        
-   */
+
   constructor(private fb: FormBuilder, private bookService:BookService, private router:Router){
     let storedBook:Book | undefined = bookService.getStoredBook()
     this.isEditing = storedBook ? true : false;
     this.bookForm = this.fb.group({
-      id: storedBook?.id?? '-1',
+      id: storedBook?.id?? '',
       name: new FormControl(storedBook?.name??''),
       authors: this.fb.array(storedBook?.authors??[]), // Initialize FormArray
       isbn: new FormControl(storedBook?.isbn??''),      

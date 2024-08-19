@@ -9,23 +9,49 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./blog-list.component.css']
 })
 export class BlogListComponent {
-  blogs:Blog[] | undefined
+  blogs:Blog[] = []
+
+  
   constructor(private blogService:BlogService, private route:ActivatedRoute){
-    this.blogs = this.route.snapshot.data['blogs']
+    this.getBlogList()
   }
   
   handleEvent($event:any){
     console.log("Event emmited:" + $event)
+    if($event == 'DELETE ALL'){
+      this.deleteAll()
+    }
   }
 
+  editBlog = (i:number) =>{
+    let blog = this.blogs[i]
+    this.blogService.setStoredBlog(blog);
+  }
 
-  edit = (blogId:number) =>{
-    console.log(`$Blog ${blogId} gets edited!`)
-    this.blogService.storeCalledBlog(blogId);
+  deleteAll = () => {
+    console.log('Deleting all blogs')
+    if(this.blogs){
+      for(let blog of this.blogs){
+        this.deleteBlog(blog.id)
+      }
+    }
+    else{
+      console.log('No data in blogs.')
+    }
   }
   
-  delete = (blogId:number) =>{
-    console.log(`$blogId ${blogId} gets deleted!`)
+  getBlogList(){
+    this.blogService.getBlogs().subscribe((data: Blog[]) =>
+    this.blogs = data)
+  }
+
+  deleteBlog = (blogId:number) =>{
+    this.blogService
+    .deleteBlog(blogId)
+    .subscribe((data: { id: any; }) => {
+      console.log(`Blog ${data.id} gets deleted!`)
+      this.getBlogList()
+    })
   }
 
 }

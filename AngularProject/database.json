@@ -2,16 +2,8 @@
   "users": [],
   "books": [
     {
-      "id": "0",
-      "name": "Harry Potter",
-      "authors": [
-        "J.K. Rowling"
-      ],
-      "isbn": "111111111X"
-    },
-    {
       "id": "1",
-      "name": "Percy Jackson (JSON EDITED)",
+      "name": "Percy Jackson (JSON EDITED 111)",
       "authors": [
         "Rick Riordan"
       ],
@@ -19,9 +11,10 @@
     },
     {
       "id": "2",
-      "name": "Sleep Walker",
+      "name": "Sleep Walker Walking",
       "authors": [
-        "Stephen King"
+        "Stephen King",
+        "Stephen Queen"
       ],
       "isbn": "333333333X"
     },
@@ -34,24 +27,15 @@
         "Carlos Yulo"
       ],
       "isbn": "444444444X"
-    },
-    {
-      "id": "-1",
-      "name": "A guide to Valorant",
-      "authors": [
-        "Derek Bautista"
-      ],
-      "isbn": "121212121X"
     }
   ],
   "blogs": [
     {
       "id": "0",
-      "title": "Can someone be absolutely 'built different'? (FROM database.json)",
+      "title": "Can someone be absolutely 'built different'? (Json edited yehey)",
       "description": "This blog talks about if a person A will always be better than person B no matter how much person B tries?",
       "author": "Morgan Freeman",
       "comments": [
-        "What a wonderful blog",
         "Very informative, but I disagree on some points"
       ]
     },
@@ -93,6 +77,15 @@
       "comments": [
         "BTS and BLACKPINK are unstoppable!",
         "The global influence of K-Pop is incredible."
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Blog test",
+      "description": "Desc",
+      "author": "Tester",
+      "comments": [
+        "Im testing"
       ]
     }
   ]

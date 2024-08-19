@@ -3,7 +3,7 @@
  <app-command-bar (actionEmitter)="handleEvent($event)"></app-command-bar>
 <div *ngFor="let blog of blogs; let i = index">
     <app-blog-item [blogInput] = "blog"></app-blog-item>
-    <button (click)="edit(blog.id)" [routerLink]="['form']" routerLinkActive="router-link-active" >Edit</button>
-    <button (click)="delete(blog.id)">DELETE</button>
+    <button (click)="editBlog(i)" [routerLink]="['form']" routerLinkActive="router-link-active" >Edit</button>
+    <button (click)="deleteBlog(blog.id)">DELETE</button>
     <br/><br/>
 </div>
